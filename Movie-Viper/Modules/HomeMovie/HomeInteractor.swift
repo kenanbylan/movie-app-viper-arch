@@ -11,36 +11,46 @@ class HomeInteractor {
     var presenter: HomeInteractorToPresenter?
     var service: NetworkService?
     let networkManager = HomeService.shared
-
 }
 
 
+
+//Service atılan istek burada alınır ve presenterdaki arraylere iletilir.
 extension HomeInteractor: HomePresenterToInteractor {
     
-    
     func getGenres() {
-        
+        networkManager.getGenre { genres, error in
+            if let error = error {
+                print("Error getGenre: \(error.localizedDescription)")
+            } else {
+                print("NO hata genress")
+                if let genres = genres {
+                    self.didSuccesGetGenre(response: genres.genres)
+                }
+            }
+            
+        }
     }
+    
     
     func getMovieListDiscover() {
         networkManager.getDiscoverMovies { movies, error in
             if let error = error {
-                print("Error getCharacterItems : \(error.localizedDescription)")
+                print("Error getDiscoverMovies : \(error.localizedDescription)")
                 
             } else {
                 if let movies = movies {
                     self.didSuccessGetMovieListDiscover(response: movies.results)
-                  
                 }
             }
-
-            
         }
     }
 }
 
 
-extension HomeInteractor: MovieListDiscover {
+
+//Presenter sayfasına gönderilen fonksiyonlar.
+extension HomeInteractor: MovieListDiscover, GenreList  {
     
     func didSuccessGetMovieListDiscover(response: [Movie]) {
         presenter?.didSuccessGetMovieListDiscover(response: response)
@@ -48,6 +58,15 @@ extension HomeInteractor: MovieListDiscover {
     
     func didFailedGetMovieListDiscover(error: String) {
         presenter?.didFailedGetMovieListDiscover(error: error)
+    }
+    
+    
+    func didSuccesGetGenre(response: [Genre]) {
+        presenter?.didSuccessGetGenre(response: response)
+    }
+    
+    func didFailedGetGenre(error: String) {
+        presenter?.didFailedGetGenre(error: error)
     }
     
     
