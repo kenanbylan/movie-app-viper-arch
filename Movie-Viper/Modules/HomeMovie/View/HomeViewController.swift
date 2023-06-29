@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //   navigationItem.title = "Movie's Historial"
+        navigationItem.title = "Movie's Historial"
         
         presenter?.viewDidLoad()
         registerCell()

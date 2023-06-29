@@ -10,10 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Movie_Viper" customModuleProvider="target">
             <connections>
-                <outlet property="carouselCollectionView" destination="z2j-yL-QaB" id="l2s-zV-ezc"/>
                 <outlet property="genreCollectionView" destination="AYi-rN-4L9" id="bYn-5O-YAH"/>
-                <outlet property="popularMoviesCollectionView" destination="jz7-Rc-Cbx" id="pMo-ZG-C1y"/>
-                <outlet property="view" destination="AYi-rN-4L9" id="01F-LB-C9k"/>
+                <outlet property="popularMoviesCollectionView" destination="jz7-Rc-Cbx" id="zlh-Fh-zfp"/>
+                <outlet property="view" destination="gug-cX-7vu" id="ijM-DD-peh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,17 +26,17 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TEE-r9-E2s">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="369.66666666666669"/>
                             <subviews>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AYi-rN-4L9">
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AYi-rN-4L9">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="70" id="b8v-F2-gXF"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fke-FJ-xqM">
-                                        <size key="itemSize" width="50" height="40"/>
+                                        <size key="itemSize" width="100" height="40"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="679-De-opZ">

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,18 +20,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="135" height="56"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comedy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orR-JI-JiJ">
-                                <rect key="frame" x="16" y="16" width="103" height="24"/>
+                                <rect key="frame" x="8" y="8" width="119" height="40"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="orR-JI-JiJ" firstAttribute="top" secondItem="gY8-xI-bXA" secondAttribute="top" constant="16" id="9pq-aX-JTD"/>
-                            <constraint firstAttribute="trailing" secondItem="orR-JI-JiJ" secondAttribute="trailing" constant="16" id="QGi-cP-fus"/>
-                            <constraint firstItem="orR-JI-JiJ" firstAttribute="leading" secondItem="gY8-xI-bXA" secondAttribute="leading" constant="16" id="pfB-jO-CLp"/>
-                            <constraint firstAttribute="bottom" secondItem="orR-JI-JiJ" secondAttribute="bottom" constant="16" id="zZs-eL-Pfw"/>
+                            <constraint firstItem="orR-JI-JiJ" firstAttribute="top" secondItem="gY8-xI-bXA" secondAttribute="top" constant="8" id="9pq-aX-JTD"/>
+                            <constraint firstAttribute="trailing" secondItem="orR-JI-JiJ" secondAttribute="trailing" constant="8" id="QGi-cP-fus"/>
+                            <constraint firstItem="orR-JI-JiJ" firstAttribute="leading" secondItem="gY8-xI-bXA" secondAttribute="leading" constant="8" id="pfB-jO-CLp"/>
+                            <constraint firstAttribute="bottom" secondItem="orR-JI-JiJ" secondAttribute="bottom" constant="8" id="zZs-eL-Pfw"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -52,9 +50,4 @@
             <point key="canvasLocation" x="121" y="12"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

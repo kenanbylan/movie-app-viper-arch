@@ -21,6 +21,7 @@ extension HomeInteractor: HomePresenterToInteractor {
     func getGenres() {
         networkManager.getGenre { genres, error in
             if let error = error {
+                self.didFailedGetGenre(error: error.localizedDescription)
                 print("Error getGenre: \(error.localizedDescription)")
             } else {
                 print("NO hata genress")
@@ -36,6 +37,7 @@ extension HomeInteractor: HomePresenterToInteractor {
     func getMovieListDiscover() {
         networkManager.getDiscoverMovies { movies, error in
             if let error = error {
+                self.didFailedGetMovieListDiscover(error: error.localizedDescription)
                 print("Error getDiscoverMovies : \(error.localizedDescription)")
                 
             } else {
