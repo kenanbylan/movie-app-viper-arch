@@ -22,6 +22,8 @@ class HomePresenter: HomeViewToPresenter {
     func viewDidLoad() {
         
         interactor?.getMovieListDiscover()
+        interactor?.getGenres()
+        
     }
     
     // MARK: Herhangi bir movie view'ına tıklandığında çalışacaktır.
@@ -38,25 +40,23 @@ class HomePresenter: HomeViewToPresenter {
 extension HomePresenter: HomeInteractorToPresenter {
     
     func didSuccessGetGenre(response: [Genre]) {
-        //TODO:
+        self.genreList = response
+        view?.updateGenreCollectionView()
     }
     
     func didFailedGetGenre(error: String) {
-        //TODO:
+        //TODO: will be added alert
     }
     
     func didSuccessGetMovieListDiscover(response: [Movie]) {
-        
         self.movieList = response //çekilen datalar bu sayfadaki arrayde tutuluyor.
-        view?.updatePopularCollectionView() // viewdaki çekilen datalardan sonra collectionView reload edilir.
+        view?.updatePopularCollectionView()
+        // viewdaki çekilen datalardan sonra collectionView reload edilir.
     }
     
     func didFailedGetMovieListDiscover(error: String) {
         print("ERROR: ",error);
         //TODO: Alert ile kullanıcıya döndürülmelidir.
     }
-    
-    
-    
     
 }

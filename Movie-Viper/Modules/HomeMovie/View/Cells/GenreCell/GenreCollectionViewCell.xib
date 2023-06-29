@@ -49,7 +49,7 @@
                 <outlet property="backView" destination="gY8-xI-bXA" id="fJ5-6b-Va1"/>
                 <outlet property="genreTitle" destination="orR-JI-JiJ" id="fTK-Md-X3f"/>
             </connections>
-            <point key="canvasLocation" x="179.38931297709922" y="20.422535211267608"/>
+            <point key="canvasLocation" x="121" y="12"/>
         </collectionViewCell>
     </objects>
     <resources>

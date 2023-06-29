@@ -13,6 +13,6 @@ struct Genres: Codable {
 }
 
 struct Genre: Codable {
-    var id: Int?
-    var name: String?
+    let  id: Int?
+    let name: String?
 }

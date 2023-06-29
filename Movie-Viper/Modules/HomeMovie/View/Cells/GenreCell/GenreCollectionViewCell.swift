@@ -14,7 +14,11 @@ class GenreCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    
     }
-
+    
+    func setup(genre: Genre) {
+        genreTitle.text = genre.name
+    }
+    
 }

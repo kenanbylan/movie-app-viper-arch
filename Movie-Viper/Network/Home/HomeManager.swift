@@ -9,28 +9,14 @@ import Foundation
 import Alamofire
 
 
-enum HomeManager {
+struct HomeManager {
     
-    case getGenre
-    case getMoviesByGenre(genreId: String)
-    case getAllMovieList
-    case getNewMovie
+    static let baseUrl = "https://api.themoviedb.org/3"
+    static let apiKey = "6335fd3b6f5e0ca123a23a2cb1fae31c"
+    static let baseImgUrl = "https://image.tmdb.org/t/p/w342/"
     
-    
-    //MARK: Düzenlenecektir.
-    var path: String {
-        switch self {
-            
-        case .getGenre:
-            return "genre/movie/list"
-        case .getMoviesByGenre(genreId: let genreId):
-            return "discover/movie"
-        case .getAllMovieList:
-            return "\(NetworkHelper.shared.baseUrl)discover/movie"
-        case .getNewMovie:
-            return "discover/movie/new"
-        }
-    }
+    static let getDiscoverMoviesPath = "/discover/movie?api_key=\(apiKey)&language=en-US"
+    static let getGenrePath = "/genre/movie/list?api_key=\(apiKey)&language=en-US"
     
 }
 

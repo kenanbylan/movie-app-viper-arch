@@ -10,9 +10,10 @@ import Foundation
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var genreCollectionView: UICollectionView!
+    @IBOutlet weak var carouselCollectionView: UICollectionView!
     @IBOutlet weak var popularMoviesCollectionView: UICollectionView!
-
-    @IBOutlet weak var newMoviesCollectionView: UICollectionView!
+    
     
     var presenter: HomeViewToPresenter?
     let widthMovieItem = (Constant.screenWith - 50) / 2
@@ -21,6 +22,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //   navigationItem.title = "Movie's Historial"
         
         presenter?.viewDidLoad()
         registerCell()
@@ -28,30 +30,29 @@ class HomeViewController: UIViewController {
     }
     
     
-    
     func registerCell() {
+        
         popularMoviesCollectionView.delegate = self
         popularMoviesCollectionView.dataSource = self
+        
+        genreCollectionView.delegate = self
+        genreCollectionView.dataSource = self
         
         let popularMovieNibname = MovieCollectionViewCell.identifier
         popularMoviesCollectionView.register(UINib(nibName: String(describing: MovieCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: MovieCollectionViewCell.self))
         
-    }
-    
-    @IBAction func genreFilterButton(_ sender: Any) {
-        print("Clicked genre filter button.")
+        genreCollectionView.register(UINib(nibName: String(describing: GenreCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: GenreCollectionViewCell.self))
         
     }
-    
     
 }
 
 
 extension HomeViewController: HomePresenterToView {
     
-    func updateNewsCollectionView() {
+    func updateGenreCollectionView() {
         DispatchQueue.main.async {
-            self.popularMoviesCollectionView.reloadData()
+            self.genreCollectionView.reloadData()
         }
     }
     
@@ -59,6 +60,12 @@ extension HomeViewController: HomePresenterToView {
         DispatchQueue.main.async {
             self.popularMoviesCollectionView.reloadData()
         }
+        
+    }
+    
+    
+    func updateCarouselCollectionView() {
+        //TODO: will be added
     }
     
 }
@@ -68,23 +75,54 @@ extension HomeViewController: HomePresenterToView {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.movieList.count ?? 3
+        
+        switch collectionView  {
+        case popularMoviesCollectionView:
+            return presenter?.movieList.count ?? 0
+            
+        case genreCollectionView:
+            return presenter?.genreList.count ?? 0
+            
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let reuseIdentifier = MovieCollectionViewCell.identifier
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieCollectionViewCell.self) , for: indexPath) as! MovieCollectionViewCell
+        switch collectionView {
         
-        
-        print("presenter.movielist44", presenter?.movieList)
-        
-        if let movies = presenter?.movieList {
-            cell.setup(movie: movies[indexPath.row])
+        case popularMoviesCollectionView:
+            let reuseIdentifier = MovieCollectionViewCell.identifier
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieCollectionViewCell.self) , for: indexPath) as! MovieCollectionViewCell
+            
+            
+            if let presenter = presenter {
+                let movie = presenter.movieList[indexPath.row]
+                cell.setup(movie: movie)
+            } else {
+                print("Presenter is nil")
+            }
+    
+            return cell
+            
+        case genreCollectionView:
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GenreCollectionViewCell.self) , for: indexPath) as! GenreCollectionViewCell
+            
+            if let genre = presenter?.genreList {
+                cell.setup(genre: genre[indexPath.row])
+            }
+            
+            return cell
+            
+            
+        default:
+            return UICollectionViewCell()
         }
         
-        return cell
     }
     
 }
@@ -92,23 +130,23 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let height = widthMovieItem * 1.5
-        return CGSize(width: widthMovieItem, height: height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        return UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let height = widthMovieItem * 1.5
+//        return CGSize(width: widthMovieItem, height: height)
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//
+//        return UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//
+//        return 0
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10
+//    }
 }

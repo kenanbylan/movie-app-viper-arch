@@ -28,8 +28,9 @@ protocol HomeViewToPresenter: AnyObject {
 
 protocol HomePresenterToView: AnyObject{
     var presenter: HomeViewToPresenter? {get set}
-    func updateNewsCollectionView()
+    func updateGenreCollectionView()
     func updatePopularCollectionView()
+    func updateCarouselCollectionView()
     
 }
 
@@ -42,8 +43,10 @@ protocol HomePresenterToInteractor: AnyObject{
 }
 
 protocol HomeInteractorToPresenter: AnyObject {
+    
     func didSuccessGetGenre(response: [Genre])
     func didFailedGetGenre(error: String)
+    
     func didSuccessGetMovieListDiscover(response: [Movie])
     func didFailedGetMovieListDiscover(error: String)
     

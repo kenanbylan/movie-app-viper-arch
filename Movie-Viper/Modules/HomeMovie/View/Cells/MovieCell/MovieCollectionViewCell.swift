@@ -20,32 +20,32 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
         configureView()
     }
-    
-    
     
     func setup(movie: Movie) {
         movieTitleLabel.text = movie.title
         movieSubTitleLabel.text = movie.overview
-        let url = (URL(string: "\(NetworkHelper.shared.baseUrl)\(movie.posterPath)"))
+        
+        let url = (URL(string: "\(HomeManager.baseImgUrl)\(movie.posterPath)"))
+        print("URL:",url)
         self.movieImageView.kf.setImage(with: url)
     }
     
     
     func configureView() {
         
-//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.frame = CGRect(x: 0, y: backView.frame.minY, width: backView.frame.size.width, height: backView.frame.size.height)
-//
-//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//
-//        self.layer.cornerRadius = 10
-//        movieImageView.layer.cornerRadius = 5
-//        movieImageView.addSubview(blurEffectView)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = CGRect(x: 0, y: backView.frame.minY, width: backView.frame.size.width, height: backView.frame.size.height)
+
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        self.layer.cornerRadius = 10
+        self.backView.backgroundColor = UIColor.lightGray
+        movieImageView.layer.cornerRadius = 5
+        
+       // movieImageView.addSubview(blurEffectView)
     }
 
 }
