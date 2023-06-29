@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="Movie_Viper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="157" height="207"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="157" height="207"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Hai-1f-SCo">
+                        <rect key="frame" x="0.0" y="0.0" width="157" height="207"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZH8-pG-gzW">
+                                <rect key="frame" x="0.0" y="3" width="157" height="98.666666666666671"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0vB-qO-SuA">
+                                <rect key="frame" x="0.0" y="103.66666666666669" width="157" height="103.33333333333331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pulp Fiction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUw-zE-byO">
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="51.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating *4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPU-3S-XQ7">
+                                        <rect key="frame" x="0.0" y="51.666666666666671" width="157" height="51.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Hai-1f-SCo" secondAttribute="trailing" id="8v0-Qt-SDy"/>
+                <constraint firstItem="Hai-1f-SCo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EGe-XB-XnU"/>
+                <constraint firstAttribute="bottom" secondItem="Hai-1f-SCo" secondAttribute="bottom" id="KPo-ya-veZ"/>
+                <constraint firstItem="Hai-1f-SCo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="X69-vc-Z6m"/>
+            </constraints>
+            <size key="customSize" width="157" height="207"/>
+            <connections>
+                <outlet property="movieImageView" destination="ZH8-pG-gzW" id="nq3-Zf-9ct"/>
+                <outlet property="movieSubTitleLabel" destination="dPU-3S-XQ7" id="JeY-hn-Csi"/>
+                <outlet property="movieTitleLabel" destination="cUw-zE-byO" id="QTc-Ze-idj"/>
+            </connections>
+            <point key="canvasLocation" x="-6.8702290076335872" y="64.436619718309856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
