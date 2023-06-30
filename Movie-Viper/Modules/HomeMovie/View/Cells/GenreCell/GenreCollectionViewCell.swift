@@ -9,9 +9,11 @@ import UIKit
 
 class GenreCollectionViewCell: UICollectionViewCell {
     
+    
+    static let identifier = String(describing: GenreCollectionViewCell.self)
+
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var genreTitle: UILabel!
-    
     
     
     override var isSelected: Bool {

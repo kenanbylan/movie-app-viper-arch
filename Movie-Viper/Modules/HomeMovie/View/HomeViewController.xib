@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Movie_Viper" customModuleProvider="target">
             <connections>
+                <outlet property="carouselCollectionView" destination="z2j-yL-QaB" id="Q6x-jA-2wQ"/>
                 <outlet property="genreCollectionView" destination="AYi-rN-4L9" id="bYn-5O-YAH"/>
+                <outlet property="pageControl" destination="emn-kz-3bn" id="hE3-7X-K4A"/>
                 <outlet property="popularMoviesCollectionView" destination="jz7-Rc-Cbx" id="zlh-Fh-zfp"/>
                 <outlet property="view" destination="gug-cX-7vu" id="ijM-DD-peh"/>
             </connections>

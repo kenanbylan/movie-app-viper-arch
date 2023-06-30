@@ -15,12 +15,12 @@ class HomePresenter: HomeViewToPresenter {
     var interactor: HomePresenterToInteractor?
     var router: HomePresenterToRouter?
     
-    
     var movieList: [Movie] = []
     var genreList: [Genre] = []
-
+    var carouselList: [Movie] = []
+    
+    
     func viewDidLoad() {
-        
         interactor?.getMovieListDiscover()
         interactor?.getGenres()
         
@@ -50,6 +50,7 @@ extension HomePresenter: HomeInteractorToPresenter {
     
     func didSuccessGetMovieListDiscover(response: [Movie]) {
         self.movieList = response //çekilen datalar bu sayfadaki arrayde tutuluyor.
+        updateCarouselList()
         view?.updatePopularCollectionView()
         // viewdaki çekilen datalardan sonra collectionView reload edilir.
     }
@@ -58,6 +59,21 @@ extension HomePresenter: HomeInteractorToPresenter {
         print("ERROR: ",error);
         //TODO: Alert ile kullanıcıya döndürülmelidir.
     }
+}
+
+extension HomePresenter {
+    
+    func updateCarouselList() {
+        guard !movieList.isEmpty else {
+            // Handle the case where the movieList is empty.
+            return
+        }
+        
+        let randomIndexes = (0..<movieList.count).shuffled().prefix(5)
+        carouselList = randomIndexes.map { movieList[$0] }
+        
+    }
+    
     
     
 }
