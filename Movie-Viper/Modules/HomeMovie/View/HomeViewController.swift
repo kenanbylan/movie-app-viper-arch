@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var carouselCollectionView: UICollectionView!
     @IBOutlet weak var popularMoviesCollectionView: UICollectionView!
     
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var presenter: HomeViewToPresenter?
     let widthMovieItem = (Constant.screenWith - 50) / 2
@@ -22,7 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //   navigationItem.title = "Movie's Historial"
+        navigationItem.title = "Movie's Historial"
         
         presenter?.viewDidLoad()
         registerCell()
@@ -30,6 +31,8 @@ class HomeViewController: UIViewController {
     }
     
     
+    
+    //TODO: do refactoring.
     func registerCell() {
         
         popularMoviesCollectionView.delegate = self
@@ -38,10 +41,18 @@ class HomeViewController: UIViewController {
         genreCollectionView.delegate = self
         genreCollectionView.dataSource = self
         
-        let popularMovieNibname = MovieCollectionViewCell.identifier
-        popularMoviesCollectionView.register(UINib(nibName: String(describing: MovieCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: MovieCollectionViewCell.self))
+        carouselCollectionView.delegate = self
+        carouselCollectionView.dataSource = self
         
-        genreCollectionView.register(UINib(nibName: String(describing: GenreCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: GenreCollectionViewCell.self))
+        let popularMovieNibname = MovieCollectionViewCell.identifier
+        popularMoviesCollectionView.register(UINib(nibName: popularMovieNibname , bundle: nil), forCellWithReuseIdentifier: popularMovieNibname)
+        
+        let genreNibname = GenreCollectionViewCell.identifier
+        genreCollectionView.register(UINib(nibName: genreNibname, bundle: nil), forCellWithReuseIdentifier: genreNibname )
+        
+        let carouselNibname = CarouselCollectionViewCell.identifier
+        carouselCollectionView.register(UINib(nibName: carouselNibname, bundle: nil), forCellWithReuseIdentifier: carouselNibname)
+        
         
     }
     
@@ -66,6 +77,7 @@ extension HomeViewController: HomePresenterToView {
     
     func updateCarouselCollectionView() {
         //TODO: will be added
+        
     }
     
 }
@@ -82,6 +94,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
         case genreCollectionView:
             return presenter?.genreList.count ?? 0
+            
+        case carouselCollectionView:
+            return presenter?.carouselList.count ?? 5
+            
             
         default:
             return 0
@@ -100,6 +116,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             
             if let presenter = presenter {
+                
                 let movie = presenter.movieList[indexPath.row]
                 cell.setup(movie: movie)
             } else {
@@ -118,6 +135,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             return cell
             
+            
+        case carouselCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CarouselCollectionViewCell.self), for: indexPath) as! CarouselCollectionViewCell
+            
+            print("Carousel List: ",presenter?.carouselList)
+            
+            return cell
             
         default:
             return UICollectionViewCell()

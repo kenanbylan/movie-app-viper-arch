@@ -16,8 +16,10 @@ protocol HomeViewToPresenter: AnyObject {
     var view: HomePresenterToView? { get set }
     var interactor: HomePresenterToInteractor? { get set }
     var router: HomePresenterToRouter? { get set }
+    
     var movieList: [Movie] { get set }
     var genreList: [Genre] { get set }
+    var carouselList: [Movie] { get set }
     
     func viewDidLoad()
     func didSelectedMovieAt(movie: Movie)
@@ -26,8 +28,10 @@ protocol HomeViewToPresenter: AnyObject {
 }
 
 
-protocol HomePresenterToView: AnyObject{
+protocol HomePresenterToView: AnyObject {
+    
     var presenter: HomeViewToPresenter? {get set}
+    
     func updateGenreCollectionView()
     func updatePopularCollectionView()
     func updateCarouselCollectionView()
