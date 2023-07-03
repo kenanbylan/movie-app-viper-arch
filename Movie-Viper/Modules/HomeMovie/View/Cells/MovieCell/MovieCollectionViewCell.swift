@@ -16,6 +16,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieSubTitleLabel: UILabel!
+    @IBOutlet weak var subView: UIView!
     
     
     override func awakeFromNib() {
@@ -28,7 +29,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
         movieSubTitleLabel.text = movie.overview
         
         let url = (URL(string: "\(HomeManager.baseImgUrl)\(movie.posterPath)"))
-        print("URL:",url)
         self.movieImageView.kf.setImage(with: url)
     }
     
@@ -37,15 +37,15 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = CGRect(x: 0, y: backView.frame.minY, width: backView.frame.size.width, height: backView.frame.size.height)
+        blurEffectView.frame = CGRect(x: 0, y: subView.frame.minY, width: subView.frame.size.width, height: subView.frame.size.height)
 
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         self.layer.cornerRadius = 10
-        self.backView.backgroundColor = UIColor.lightGray
-        movieImageView.layer.cornerRadius = 5
+        self.subView.backgroundColor = UIColor.lightGray
         
-       // movieImageView.addSubview(blurEffectView)
+        //movieImageView.layer.cornerRadius = 5
+        subView.addSubview(blurEffectView)
     }
 
 }

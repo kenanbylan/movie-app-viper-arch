@@ -19,6 +19,7 @@ protocol HomeViewToPresenter: AnyObject {
     
     var movieList: [Movie] { get set }
     var genreList: [Genre] { get set }
+    
     var carouselList: [Movie] { get set }
     
     func viewDidLoad()

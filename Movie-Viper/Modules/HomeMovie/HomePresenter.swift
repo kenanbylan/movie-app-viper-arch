@@ -10,7 +10,6 @@ import Foundation
 
 class HomePresenter: HomeViewToPresenter {
     
-    
     var view: HomePresenterToView?
     var interactor: HomePresenterToInteractor?
     var router: HomePresenterToRouter?
@@ -23,7 +22,7 @@ class HomePresenter: HomeViewToPresenter {
     func viewDidLoad() {
         interactor?.getMovieListDiscover()
         interactor?.getGenres()
-        
+
     }
     
     // MARK: Herhangi bir movie view'ına tıklandığında çalışacaktır.
@@ -50,30 +49,32 @@ extension HomePresenter: HomeInteractorToPresenter {
     
     func didSuccessGetMovieListDiscover(response: [Movie]) {
         self.movieList = response //çekilen datalar bu sayfadaki arrayde tutuluyor.
-        updateCarouselList()
+        
+        self.updateCarouselList()
         view?.updatePopularCollectionView()
-        // viewdaki çekilen datalardan sonra collectionView reload edilir.
+    
+        print("Carousel item: ", carouselList)
     }
     
     func didFailedGetMovieListDiscover(error: String) {
         print("ERROR: ",error);
         //TODO: Alert ile kullanıcıya döndürülmelidir.
+        
     }
 }
 
 extension HomePresenter {
     
     func updateCarouselList() {
+        
         guard !movieList.isEmpty else {
-            // Handle the case where the movieList is empty.
+            print("Movie list is NULL!!")
             return
         }
         
-        let randomIndexes = (0..<movieList.count).shuffled().prefix(5)
+        let randomIndexes = (0..<movieList.count).shuffled().prefix(4)
         carouselList = randomIndexes.map { movieList[$0] }
-        
+        view?.updateCarouselCollectionView()
     }
-    
-    
     
 }
