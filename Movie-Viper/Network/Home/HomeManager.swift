@@ -17,6 +17,7 @@ struct HomeManager {
     
     static let getDiscoverMoviesPath = "/discover/movie?api_key=\(apiKey)&language=en-US"
     static let getGenrePath = "/genre/movie/list?api_key=\(apiKey)&language=en-US"
+ 
     
 }
 
