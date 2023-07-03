@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+
+class MovieDetailRouter: MovieDetailPresenterToRouter {
+    
+    
+    
+    func navigateToVideoPlayer(from: MovieDetailPresenterToView, movie: Movie) {
+            
+    }
+    
+    func navigateToReview(from: MovieDetailPresenterToView, reviews: Movie) {
+            
+    }
+    
+    
+    
+}

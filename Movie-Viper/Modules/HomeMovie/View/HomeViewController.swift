@@ -172,9 +172,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         default:
             return UICollectionViewCell()
         }
-        
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        let vc = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
+        
+        if let movie = presenter?.movieList {
+            presenter?.didSelectedMovieAt(movie: movie[indexPath.row])
+        }
+        
+    }
 }
 
 
