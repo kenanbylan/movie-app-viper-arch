@@ -185,9 +185,9 @@
 			children = (
 				93C961D02A4B9A00009DD086 /* View */,
 				93C961D32A4B9A00009DD086 /* MovieDetailContract.swift */,
+				93C961D22A4B9A00009DD086 /* MovieDetailPresenter.swift */,
 				93C961CE2A4B9A00009DD086 /* MovieDetailInteractor.swift */,
 				93C961CF2A4B9A00009DD086 /* MovieDetailRouter.swift */,
-				93C961D22A4B9A00009DD086 /* MovieDetailPresenter.swift */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
