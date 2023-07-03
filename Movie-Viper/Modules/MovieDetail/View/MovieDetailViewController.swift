@@ -8,10 +8,33 @@
 import UIKit
 
 class MovieDetailViewController: UIViewController {
-
-        override func viewDidLoad() {
-        super.viewDidLoad()
     
+    var presenter: MovieDetailViewToPresenter?
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
+    
+}
 
+extension MovieDetailViewController: MovieDetailPresenterToView {
+
+    
+    
+    func getData() {
+        
+    }
+    
+    func showLoading() {
+            
+    }
+    
+    func hideLoading() {
+        
+    }
+    
+    
+    
 }

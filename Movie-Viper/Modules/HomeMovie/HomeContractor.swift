@@ -40,6 +40,7 @@ protocol HomePresenterToView: AnyObject {
 }
 
 
+//presenter --> ınteractor
 protocol HomePresenterToInteractor: AnyObject{
     
     var presenter: HomeInteractorToPresenter? {get set}
@@ -58,7 +59,7 @@ protocol HomeInteractorToPresenter: AnyObject {
 }
 
 protocol HomePresenterToRouter: AnyObject {
-    func navigateToListMovieByGenre(from: HomePresenterToView, genreId: Int)
+  //  func navigateToListMovieByGenre(from: HomePresenterToView, genreId: Int)
     func navigateToDetailMovie(from: HomePresenterToView, movie: Movie)
 }
 

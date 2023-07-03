@@ -6,3 +6,33 @@
 //
 
 import Foundation
+
+
+class MovieDetailPresenter: MovieDetailViewToPresenter {
+    
+    
+    var view: MovieDetailPresenterToView?
+    var interactor: MovieDetailPresenterToInteractor?
+    var router: MovieDetailPresenterToRouter?
+    
+    var movie: Movie?
+    
+    
+    
+    func viewDidLoad() {
+            
+    }
+    
+    func didSelectVideo() {
+        
+    }
+    
+    func didSelectVideoReview() {
+        
+    }
+    
+}
+
+extension MovieDetailPresenter: MovieDetailInteractorToPresenter {
+    
+}

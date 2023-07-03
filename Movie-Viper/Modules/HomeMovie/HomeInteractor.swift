@@ -8,6 +8,7 @@
 import Foundation
 
 class HomeInteractor {
+
     var presenter: HomeInteractorToPresenter?
     var service: NetworkService?
     let networkManager = HomeService.shared

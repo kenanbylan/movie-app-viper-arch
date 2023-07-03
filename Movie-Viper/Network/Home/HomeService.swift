@@ -50,7 +50,7 @@ class HomeService: HomeServiceProtocol {
         NetworkService.shared.request(type: Genres.self, url: url, method: .get) { response in
             switch response {
             case .success(let genres):
-
+                
                 completion(genres,nil)
                 
             case .failure(let error):
