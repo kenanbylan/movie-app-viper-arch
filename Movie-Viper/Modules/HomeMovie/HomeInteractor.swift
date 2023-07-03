@@ -47,6 +47,7 @@ extension HomeInteractor: HomePresenterToInteractor {
             }
         }
     }
+    
 }
 
 
@@ -61,7 +62,6 @@ extension HomeInteractor: MovieListDiscover, GenreList  {
     func didFailedGetMovieListDiscover(error: String) {
         presenter?.didFailedGetMovieListDiscover(error: error)
     }
-    
     
     func didSuccesGetGenre(response: [Genre]) {
         presenter?.didSuccessGetGenre(response: response)

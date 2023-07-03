@@ -21,7 +21,6 @@ protocol GenreList: AnyObject {
     func didFailedGetGenre(error: String)
 }
 
-
 class HomeService: HomeServiceProtocol {
     
     static let shared = HomeService()
@@ -51,7 +50,7 @@ class HomeService: HomeServiceProtocol {
         NetworkService.shared.request(type: Genres.self, url: url, method: .get) { response in
             switch response {
             case .success(let genres):
-                print("GENRES: ",genres)
+
                 completion(genres,nil)
                 
             case .failure(let error):
@@ -61,7 +60,5 @@ class HomeService: HomeServiceProtocol {
             
         }
     }
-    
-    
     
 }
