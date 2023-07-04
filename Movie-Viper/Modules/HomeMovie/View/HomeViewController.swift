@@ -176,12 +176,22 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-        let vc = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
         
-        if let movie = presenter?.movieList {
-            presenter?.didSelectedMovieAt(movie: movie[indexPath.row])
+        
+        switch collectionView {
+            
+        case popularMoviesCollectionView :
+            
+            let vc = MovieDetailViewController(nibName: "MovieDetailViewController", bundle: nil)
+            if let movie = presenter?.movieList {
+                presenter?.didSelectedMovieAt(movie: movie[indexPath.row])
+            }
+            
+        default:
+            break
         }
+        
+        
         
     }
 }

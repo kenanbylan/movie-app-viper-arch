@@ -124,7 +124,6 @@
 				93C961BD2A4B9977009DD086 /* Utils */,
 				93C961BE2A4B997C009DD086 /* Network */,
 				93C961BC2A4B9970009DD086 /* Modules */,
-				93C961BB2A4B996A009DD086 /* Extensions */,
 				93C961A72A4B9927009DD086 /* AppDelegate.swift */,
 				93C961A92A4B9927009DD086 /* SceneDelegate.swift */,
 				93C961C22A4B99DF009DD086 /* ScreenConfigurator.swift */,
@@ -133,13 +132,6 @@
 				93C961B52A4B9928009DD086 /* Info.plist */,
 			);
 			path = "Movie-Viper";
-			sourceTree = "<group>";
-		};
-		93C961BB2A4B996A009DD086 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		93C961BC2A4B9970009DD086 /* Modules */ = {
