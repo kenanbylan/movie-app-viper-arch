@@ -24,9 +24,8 @@ protocol MovieDetailViewToPresenter: AnyObject {
     func didSelectVideo() // TODO: will be parameters added.
     func didSelectVideoReview()   // TODO: will be parameters added.
     
+    
 }
-
-
 
 //Presenter --> Viewa gidecekler.
 protocol MovieDetailPresenterToView: AnyObject {

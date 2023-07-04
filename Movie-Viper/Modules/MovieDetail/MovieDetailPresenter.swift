@@ -9,7 +9,7 @@ import Foundation
 
 
 class MovieDetailPresenter: MovieDetailViewToPresenter {
-    
+
     
     var view: MovieDetailPresenterToView?
     var interactor: MovieDetailPresenterToInteractor?
@@ -18,6 +18,9 @@ class MovieDetailPresenter: MovieDetailViewToPresenter {
     var movie: Movie?
     
     
+    init(movie: Movie){
+        self.movie = movie
+    }
     
     func viewDidLoad() {
             

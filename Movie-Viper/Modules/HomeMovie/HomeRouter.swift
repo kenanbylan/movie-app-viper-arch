@@ -9,18 +9,20 @@ import Foundation
 import UIKit
 
 
+
 //MARK: Presenter  --> Router
 class HomeRouter: HomePresenterToRouter {
     
-    func navigateToListMovieByGenre(from view: HomePresenterToView, genreId: Int) {
-       
-        //
+    func navigateToGenreByMovie(from view: HomePresenterToView, genreId: Int) {
+        
     }
     
     
-    
-    func navigateToDetailMovie(from: HomePresenterToView, movie: Movie) {
-        //TODO: Movie'ye tıklandığında gidilecek sayfa olarak tanımlanacaktır.
+    func navigateToDetailMovie(from view: HomePresenterToView, movie: Movie) {
+        guard let view = view as? UIViewController else  {  return  }
+        let movieDetailVC = ScreenConfigurator.shared.createMovieDetailScreen(movie: movie)
+        view.navigationController?.pushViewController(movieDetailVC, animated: true)
+        
     }
     
        

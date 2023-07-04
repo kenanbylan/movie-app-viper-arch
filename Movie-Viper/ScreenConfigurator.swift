@@ -31,9 +31,11 @@ class ScreenConfigurator {
 
     
     
-    func createMovieDetailScreen() -> UIViewController {
+    func createMovieDetailScreen(movie:Movie) -> UIViewController {
+        
         let view: UIViewController & MovieDetailPresenterToView = MovieDetailViewController()
-        let presenter: MovieDetailViewToPresenter & MovieDetailInteractorToPresenter = MovieDetailPresenter()
+        let presenter: MovieDetailViewToPresenter & MovieDetailInteractorToPresenter = MovieDetailPresenter(movie: movie)
+        
         let interactor: MovieDetailPresenterToInteractor = MovieDetailInteractor()
         let router: MovieDetailPresenterToRouter = MovieDetailRouter()
         
