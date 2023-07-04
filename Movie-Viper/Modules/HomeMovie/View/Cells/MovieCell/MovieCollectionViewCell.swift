@@ -28,7 +28,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         movieTitleLabel.text = movie.title
         movieSubTitleLabel.text = movie.overview
         
-        let url = (URL(string: "\(HomeManager.baseImgUrl)\(movie.posterPath)"))
+        let url = (URL(string: "\(NetworkHelper.baseImgUrl)\(movie.posterPath)"))
         self.movieImageView.kf.setImage(with: url)
     }
     

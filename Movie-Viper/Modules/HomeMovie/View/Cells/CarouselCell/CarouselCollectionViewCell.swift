@@ -24,7 +24,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
     
     func setup(movie: Movie) {
         
-        let url = (URL(string: "\(HomeManager.baseImgUrl)\(movie.posterPath)"))
+        let url = (URL(string: "\(NetworkHelper.baseImgUrl)\(movie.posterPath)"))
         self.imageView.kf.setImage(with: url)
     }
     

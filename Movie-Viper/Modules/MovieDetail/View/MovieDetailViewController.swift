@@ -15,10 +15,10 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieLanguageLabel: UILabel!
     @IBOutlet weak var movieDateLabel: UILabel!
     @IBOutlet weak var movieAdultLabel: UILabel!
-    
+
     
     var presenter: MovieDetailViewToPresenter?
-    
+
     var didSelectMovieName: String? {
         didSet {
             navigationItem.title = didSelectMovieName
@@ -41,7 +41,7 @@ class MovieDetailViewController: UIViewController {
             
             didSelectMovieName = movie.title
             
-            let url = (URL(string: "\(HomeManager.baseImgUrl)\(movie.posterPath)"))
+            let url = (URL(string: "\(NetworkHelper.baseImgUrl)\(movie.posterPath)"))
             movieImage.kf.setImage(with: url)
             
             overviewLabel.text = movie.overview

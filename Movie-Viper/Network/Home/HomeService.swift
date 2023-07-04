@@ -28,7 +28,8 @@ class HomeService: HomeServiceProtocol {
     
     
     func getDiscoverMovies(completion: @escaping ((Movies?, Error?) -> ())) {
-        let url = HomeManager.baseUrl + HomeManager.getDiscoverMoviesPath
+                
+        let url = NetworkHelper.baseUrl + HomeManager.getDiscoverMoviesPath
         
         NetworkService.shared.request(type: Movies.self, url: url, method: .get) { response in
             
@@ -45,7 +46,7 @@ class HomeService: HomeServiceProtocol {
     
     func getGenre(completion: @escaping ((Genres?, Error?) -> ())) {
         
-        let url = HomeManager.baseUrl + HomeManager.getGenrePath
+        let url = NetworkHelper.baseUrl + HomeManager.getGenrePath
         
         NetworkService.shared.request(type: Genres.self, url: url, method: .get) { response in
             switch response {
