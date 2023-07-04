@@ -18,8 +18,12 @@ class NetworkHelper {
     
     static let shared = NetworkHelper()
     
-    static let apiKey = "930fe530d711d2b1367b8acb0dacc7f1"
-    static let baseUrl = "https://api.themoviedb.org/3/"
+    
+    static let baseUrl = "https://api.themoviedb.org/3"
+    static let apiKey = "6335fd3b6f5e0ca123a23a2cb1fae31c"
+    static let baseImgUrl = "https://image.tmdb.org/t/p/w342/"
+    
+    
     
     func requestUrl(url: String) -> String {
         return NetworkHelper.baseUrl + "/api\(url)"

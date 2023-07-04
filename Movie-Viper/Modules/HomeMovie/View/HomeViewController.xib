@@ -42,23 +42,23 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="679-De-opZ">
-                                    <rect key="frame" x="0.0" y="105.66666666666666" width="393" height="264"/>
+                                    <rect key="frame" x="0.0" y="85.666666666666657" width="393" height="284"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-yL-QaB">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="230"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="230" id="LvV-zl-Yu2"/>
+                                                <constraint firstAttribute="height" constant="250" id="LvV-zl-Yu2"/>
                                             </constraints>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DOg-M0-Cgp">
-                                                <size key="itemSize" width="390" height="230"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="DOg-M0-Cgp">
+                                                <size key="itemSize" width="390" height="250"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                <inset key="sectionInset" minX="5" minY="0.0" maxX="20" maxY="0.0"/>
+                                                <inset key="sectionInset" minX="5" minY="0.0" maxX="10" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                         </collectionView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="emn-kz-3bn">
-                                            <rect key="frame" x="0.0" y="238.00000000000003" width="393" height="25.999999999999972"/>
+                                            <rect key="frame" x="0.0" y="258" width="393" height="26"/>
                                             <color key="pageIndicatorTintColor" systemColor="systemYellowColor"/>
                                             <color key="currentPageIndicatorTintColor" systemColor="secondaryLabelColor"/>
                                         </pageControl>

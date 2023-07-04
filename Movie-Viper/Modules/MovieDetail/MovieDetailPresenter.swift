@@ -10,7 +10,6 @@ import Foundation
 
 class MovieDetailPresenter: MovieDetailViewToPresenter {
 
-    
     var view: MovieDetailPresenterToView?
     var interactor: MovieDetailPresenterToInteractor?
     var router: MovieDetailPresenterToRouter?
