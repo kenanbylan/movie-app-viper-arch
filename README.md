@@ -2,11 +2,15 @@
 <br />
   <p align="center">With xib file all pages are created and coded to understand viper architecture. </p>
 
-
   
 <p align="center">
-<img height="500" alt="Screenshot 2023-07-04 at 16 38 52" src="https://github.com/kenanbylan/movie-app-viper-arch/assets/76161957/f7d4b1e3-54d4-459c-a1b3-2c2d3f0833fa">
-<img height="500" alt="Screenshot 2023-07-04 at 16 38 47" src="https://github.com/kenanbylan/movie-app-viper-arch/assets/76161957/0d5b0293-6198-4f11-8980-4ac96ad7c38d">
+<img height="500" alt="Screenshot 2023-07-04 at 16 38 47" src="https://github.com/kenanbylan/movie-app-viper-arch/assets/76161957/24775c2c-de40-44d8-a013-575785b291e1">
+
+
+<img height="500" alt="Screenshot 2023-07-04 at 16 38 52" src="https://github.com/kenanbylan/movie-app-viper-arch/assets/76161957/189692f0-4a30-4f0c-834b-974ebfc3b9e2">
+
+
+  
 </p>
 
 ## Features
